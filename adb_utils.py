@@ -49,13 +49,8 @@ def start_app(pkg, activity=".MainActivity"):
     adb(f"am start -n {pkg}/{activity}")
 
 def dump_ui():
-    """Dump UI ke file /sdcard/ui.xml dan kembalikan isinya."""
+    """Dump UI ke /sdcard/ui.xml dan kembalikan isinya."""
     adb("uiautomator dump /sdcard/ui.xml")
-    try:
-        with open("/sdcard/ui.xml", "r", encoding="utf-8", errors="ignore") as f:
-            return f.read()
-    except:
-        # Jika file tidak ada, coba pull
-        subprocess.run("adb pull /sdcard/ui.xml /tmp/ui.xml", shell=True)
-        with open("/tmp/ui.xml", "r", encoding="utf-8", errors="ignore") as f:
-            return f.read()
+    # Baca langsung dari sdcard
+    out = adb("cat /sdcard/ui.xml")
+    return out
