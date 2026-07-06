@@ -1,5 +1,5 @@
 import time
-from adb_utils import start_app, tap, input_text, press_keycode, get_clipboard, set_clipboard, is_app_running, adb
+from adb_utils import start_app, tap, input_text, press_keycode, get_clipboard, set_clipboard, is_app_running, run, wait_for_app, dump_ui
 from ui_automator import find_element_by_text, find_edit_text, find_button_by_text, wait_for_element
 from key_fetcher import get_key_from_shortlink
 
@@ -73,13 +73,18 @@ def execute_script(pkg, script_content):
 def full_process(pkg, script_content, place_id, token, channel_id):
     print(f"\n[Delta] === Memproses {pkg} ===")
 
-    # 1. Buka clone
+    # 1. Buka clone (pakai am start -p)
+    print(f"[Delta] Membuka {pkg}...")
     start_app(pkg)
     time.sleep(3)
+    
+    # Tunggu aplikasi terbuka
+    if not wait_for_app(pkg, timeout=10):
+        print(f"[Delta] {pkg} tidak terbuka dalam 10 detik, lanjutkan...")
 
     # 2. Join ke game (deep link)
     print(f"[Delta] Join ke game dengan place ID: {place_id}")
-    adb(f"am start -a android.intent.action.VIEW -d 'roblox://placeId={place_id}' {pkg}")
+    run(f"am start -a android.intent.action.VIEW -d 'roblox://placeId={place_id}' {pkg}")
     time.sleep(5)
 
     # 3. Tunggu Delta muncul
