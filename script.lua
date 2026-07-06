@@ -1,6 +1,6 @@
 getgenv().Config = {
     ["Setting"] = {
-        ["White Screen"] = false
+        ["White Screen"] = true
     },
     ["Main"] = {
         ["Max Plant"] = 200,
@@ -12,11 +12,11 @@ getgenv().Config = {
     },
     ["Plant Seed"] = {
         ["Enable"] = true,
-        ["Seed"] = {"Bamboo","Blueberry","Apple","Tomato","Banana","Sunflower","Corn","Mushroom","Cherry","Mango","Grape","Coconut","Cactus","Baby Cactus","Pomegranate","Pineapple","Dragon Fruit","Poison Apple","Moon Bloom","Poison Ivy","Ghost Pepper","Venus Fly Trap","Dragon's Breath"}
+        ["Seed"] = {"Bamboo","Blueberry","Apple","Tomato","Banana","Sunflower","Corn","Mushroom","Cherry","Mango","Grape","Coconut","Cactus","Baby Cactus","Pomegranate","Pineapple","Dragon Fruit","Poison Apple","Moon Bloom","Rocket Pop","Poison Ivy","Ghost Pepper","Venus Fly Trap","Dragon's Breath"}
     },
     ["Buy Seed"] = {
         ["Enable"] = true,
-        ["Seed"] = {"Bamboo","Blueberry","Apple","Tomato","Banana","Sunflower","Corn","Mushroom","Cherry","Mango","Grape","Coconut","Cactus","Baby Cactus","Pomegranate","Pineapple","Dragon Fruit","Poison Apple","Moon Bloom","Poison Ivy","Ghost Pepper","Venus Fly Trap","Dragon's Breath"}
+        ["Seed"] = {"Bamboo","Blueberry","Apple","Tomato","Banana","Sunflower","Corn","Mushroom","Cherry","Mango","Grape","Coconut","Cactus","Baby Cactus","Pomegranate","Pineapple","Dragon Fruit","Poison Apple","Moon Bloom","Rocket Pop","Fire Fern","Poison Ivy","Ghost Pepper","Venus Fly Trap","Dragon's Breath"}
     },
     ["Buy Gear"] = {
         ["Enable"] = true,
@@ -37,12 +37,12 @@ getgenv().Config = {
         ["Minium Weight"] = 20
     },
     ["Mailbox"] = {
-        ["Enable"] = false,
-        ["Username"] = "",
-        ["Note"] = "Send By Blue X Hub Kaitun",
+        ["Enable"] = true,
+        ["Username"] = "PentilBiru666",
+        ["Note"] = "yo",
         ["Delay"] = 40,
-        ["Seed"] = {"Rainbow","Gold","Dragon's Breath"},
-        ["Count Seed"] = 1, -- Max 20
+        ["Seed"] = {"Fire Fern","Rainbow","Gold","Dragon's Breath"},
+        ["Count Seed"] = 5, -- Max 20
         ["Gear"] = {},
         ["Count Gear"] = 1, -- Max 20
         ["Pet"] = {},
@@ -51,10 +51,10 @@ getgenv().Config = {
     ["Webhook"] = {
         ["Enable"] = false,
         ["UrlWebhook"] = "",
-        ["Favorite Fruits"] = true,
-        ["Gold/Rainbow Seed"] = true, -- send if collect gold/rainbow seed
+        ["Favorite Fruits"] = false,
+        ["Gold/Rainbow Seed"] = false, -- send if collect gold/rainbow seed
         ["Buy Pet"] = true, -- send if buy pet
-        ["Send Profile Player"] = true,
+        ["Send Profile Player"] = false,
         ["Delay Send Profile Player"] = 180
     },
 }
